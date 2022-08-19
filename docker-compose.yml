@@ -4,10 +4,22 @@ services:
   users-db:
     image: postgres:11
     ports:
-      - 9000:5432
+      - 5432:5432
     environment:
       - POSTGRES_DB=usersdb
       - POSTGRES_USER=usersdb
       - POSTGRES_PASSWORD=usersdb
     volumes:
       - ./.data/usersdb:/var/lib/postgresql/data  
+  catalogdb:
+    image: mysql:5.7
+    volumes:
+      - .data/catalogdb:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: catalogdb
+        MYSQL_DATABASE: catalogdb
+        MYSQL_USER: catalogdb
+        MYSQL_PASSWORD: catalogdb

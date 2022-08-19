@@ -1,0 +1,24 @@
+### GET ALL CATEGORIES
+GET http://localhost:8002/api/category/get-all-categories
+Accept: application/json
+
+### GET ALL PRODUCTS
+GET http://localhost:8002/api/product/get-all-products
+Accept: application/json
+
+### POST CREATE PRODUCT
+POST http://localhost:8002/api/product/create-product
+Content-Type: application/json
+
+{
+  "categoryId":  1,
+  "description": "any product",
+  "price":  100,
+  "pictureFileName":  "img.png",
+  "pictureUrl":  "someurl"
+}
+
+### DELETE PRODUCT BY ID
+DELETE http://localhost:8002/api/product/delete-product/1
+Accept: application/json
+
