@@ -35,7 +35,6 @@ public class SpringDataUserRepository implements UserRepository {
     public List<User> findAll() {
         return this.repository.findAll();
     }
-
     @Override
     public void deleteById(Long userId) {
         this.repository.deleteById(userId);

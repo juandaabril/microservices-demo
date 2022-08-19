@@ -16,7 +16,7 @@ public class GetAllUsersController {
     private GetAllUsers getAllUsers;
 
     @GetMapping("/api/user/get-all-users")
-    public List<User> handle(@PathVariable Long id) {
+    public List<User> handle() {
         return this.getAllUsers.invoke();
     }
 }

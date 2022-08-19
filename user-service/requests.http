@@ -1,0 +1,21 @@
+### GET ALL USERS
+GET http://localhost:8001/api/user/get-all-users
+Accept: application/json
+
+### GET USER BY ID
+GET http://localhost:8001/api/user/get-user-by-id/1
+Accept: application/json
+
+### POST CREATE USER
+POST http://localhost:8001/api/user/create-user
+Content-Type: application/json
+
+{
+  "email": "demo@gmail.com",
+  "password": "123456"
+}
+
+### GET USER BY ID
+DELETE http://localhost:8001/api/user/delete-user/1
+Accept: application/json
+
