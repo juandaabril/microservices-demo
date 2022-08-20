@@ -20,5 +20,8 @@ jobs:
       - name: Test
         run: cd ./catalog-service && ./gradlew test
       - name: Version
-        run: git describe --exact-match --tags 2> /dev/null || echo 'latest'
+        run: echo "IMAGE_VERSION=$(git describe --exact-match --tags 2> /dev/null || echo 'latest')" >> $GITHUB_ENV
+      - name: Test
+        run: echo $IMAGE_VERSION
+
   
