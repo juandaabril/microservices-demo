@@ -23,7 +23,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-        - name: Check out repository
+      - name: Check out repository
         uses: actions/checkout@v2
-        - name: Build
+      - name: Build
         run: git describe --exact-match --tags 2> /dev/null || echo 'latest'
