@@ -3,8 +3,8 @@ name: Catalog Service Workflow
 on:
   push:
     branches: [master]
-    paths:
-      - catalog-service/**
+    tags:
+      - 'catalog-service/**'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,3 +20,10 @@ jobs:
         run: cd ./catalog-service && ./gradlew build
       - name: Test
         run: cd ./catalog-service && ./gradlew test
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Check out repository
+        uses: actions/checkout@v2
+        - name: Build
+        run: git describe --exact-match --tags 2> /dev/null || echo 'latest'
