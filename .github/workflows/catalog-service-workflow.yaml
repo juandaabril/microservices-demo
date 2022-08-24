@@ -36,7 +36,7 @@ jobs:
           msg: '$IMAGE_VERSION'
           separator: '/'
       - name: Test
-        run: echo ${{ steps.split.outputs._0' }}
+        run: echo ${{ steps.split.outputs._0 }}
       - name: Test
         run: echo ${{ steps.split.outputs._1 }}
       - name: Login to GitHub Container Registry
