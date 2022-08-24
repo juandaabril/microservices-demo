@@ -30,11 +30,11 @@ jobs:
       - name: Test
         run: echo $IMAGE_VERSION
       - name: Split Version
-        uses: jungwinter/split@v2
+        uses: rishabhgupta/split-by@v1
         id: split
         with:
-          msg: '$IMAGE_VERSION'
-          separator: '/'
+          string: '$IMAGE_VERSION'
+          split-by: '/'
       - name: Test
         run: echo ${{ steps.split.outputs._0 }}
       - name: Test
