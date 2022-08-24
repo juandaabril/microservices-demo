@@ -30,8 +30,7 @@ jobs:
       - name: Test
         run: echo $IMAGE_VERSION
       - name: Split Version
-      - uses: jungwinter/split@v2
-        id: split
+        uses: jungwinter/split@v2
         with:
           msg: $IMAGE_VERSION
           separator: '/'
