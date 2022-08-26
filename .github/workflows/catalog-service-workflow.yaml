@@ -22,8 +22,6 @@ jobs:
   publish:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
@@ -54,4 +52,4 @@ jobs:
         with:
           context: ./catalog-service
           push: true
-          tags: ghcr.io/${{ github.repository }}-${{ steps.split.outputs._0 }}:${{ steps.split.outputs._1 }}
+          tags: ghcr.io/${{ github.repository }}/${{ steps.split.outputs._0 }}:${{ steps.split.outputs._1 }}
