@@ -13,8 +13,12 @@ services:
         MYSQL_DATABASE: catalogdb
         MYSQL_USER: catalogdb
         MYSQL_PASSWORD: catalogdb
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 20s
+        retries: 10
   user-service:
-    image: ghcr.io/juandaabril/microservices-demo-catalog-service:0.0.11
+    image: ghcr.io/juandaabril/microservices-demo-catalog-service:0.0.14
     ports:
       - "8080:8080"
     environment:
@@ -24,3 +28,6 @@ services:
         DATABASE_NAME: catalogdb
         DATABASE_USERNAME: catalogdb
         DATABASE_PASSWORD: catalogdb
+    depends_on:
+      catalogdb:
+        condition: service_healthy
