@@ -15,7 +15,9 @@ RUN ./gradlew build
 FROM eclipse-temurin:17-jdk-focal
 COPY --from=builder ./app/build/libs/*.jar api.jar
 ENV PORT ''
-ENV DATABASE_URL ''
+ENV DATABASE_HOST ''
+ENV DATABASE_PORT ''
+ENV DATABASE_NAME ''
 ENV DATABASE_USERNAME ''
 ENV DATABASE_PASSWORD ''
 
