@@ -17,10 +17,10 @@ services:
         test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
         timeout: 20s
         retries: 10
-  user-service:
-    image: ghcr.io/juandaabril/microservices-demo-catalog-service:0.0.14
+  catalog-service:
+    image: ghcr.io/juandaabril/microservices-demo-catalog-service:0.0.15
     ports:
-      - "8080:8080"
+      - "8002:8080"
     environment:
         PORT: 8080
         DATABASE_HOST: catalogdb
