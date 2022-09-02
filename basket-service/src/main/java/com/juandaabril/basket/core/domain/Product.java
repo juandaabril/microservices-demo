@@ -10,51 +10,39 @@ public class Product {
     private BigDecimal quantity;
     private String pictureUrl;
 
-    public String getId() {
-        return id;
+    public Product() {
     }
 
-    public void setId(String id) {
+    public Product(String id, String name, BigDecimal unitPrice, BigDecimal oldUnitPrice, BigDecimal quantity, String pictureUrl) {
         this.id = id;
+        this.name = name;
+        this.unitPrice = unitPrice;
+        this.oldUnitPrice = oldUnitPrice;
+        this.quantity = quantity;
+        this.pictureUrl = pictureUrl;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public BigDecimal getUnitPrice() {
         return unitPrice;
-    }
-
-    public void setUnitPrice(BigDecimal unitPrice) {
-        this.unitPrice = unitPrice;
     }
 
     public BigDecimal getOldUnitPrice() {
         return oldUnitPrice;
     }
 
-    public void setOldUnitPrice(BigDecimal oldUnitPrice) {
-        this.oldUnitPrice = oldUnitPrice;
-    }
-
     public BigDecimal getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(BigDecimal quantity) {
-        this.quantity = quantity;
-    }
-
     public String getPictureUrl() {
         return pictureUrl;
-    }
-
-    public void setPictureUrl(String pictureUrl) {
-        this.pictureUrl = pictureUrl;
     }
 }
