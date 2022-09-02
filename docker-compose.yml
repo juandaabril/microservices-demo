@@ -1,7 +1,7 @@
 version: '3.7'
 
 services:
-  users-db:
+  usersdb:
     image: postgres:11
     ports:
       - 5432:5432
@@ -23,3 +23,13 @@ services:
         MYSQL_DATABASE: catalogdb
         MYSQL_USER: catalogdb
         MYSQL_PASSWORD: catalogdb
+  basketdb:
+    image: mongo:6.0
+    volumes:
+      - .data/basketdb:/data/db
+    restart: always
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: basketdb
+      MONGO_INITDB_ROOT_PASSWORD: basketdb
