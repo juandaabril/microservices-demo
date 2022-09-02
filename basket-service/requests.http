@@ -1,0 +1,24 @@
+### GET ALL baskets
+GET http://localhost:8080/api/basket
+Accept: application/json
+
+### GET BASKET BY USER_ID
+GET http://localhost:8080/api/basket/get-basket-by-userid/1
+Accept: application/json
+
+### POST CREATE PRODUCT
+POST http://localhost:8002/api/product/create-product
+Content-Type: application/json
+
+{
+  "categoryId":  1,
+  "description": "any product",
+  "price":  100,
+  "pictureFileName":  "img.png",
+  "pictureUrl":  "someurl"
+}
+
+### DELETE PRODUCT BY ID
+DELETE http://localhost:8002/api/product/delete-product/1
+Accept: application/json
+
