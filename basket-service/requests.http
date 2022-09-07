@@ -6,19 +6,18 @@ Accept: application/json
 GET http://localhost:8080/api/basket/get-basket-by-userid/1
 Accept: application/json
 
-### POST CREATE PRODUCT
-POST http://localhost:8002/api/product/create-product
+### ADD PRODUCT TO THE BASKET
+PUT http://localhost:8080/api/basket
 Content-Type: application/json
 
 {
-  "categoryId":  1,
-  "description": "any product",
-  "price":  100,
-  "pictureFileName":  "img.png",
-  "pictureUrl":  "someurl"
+  "userId":  1,
+  "product": {
+    "id": 2,
+    "name": "any product2kk",
+    "unitPrice": 200,
+    "oldUnitPrice": 100,
+    "quantity": 2,
+    "pictureUrl": "some-url"
+  }
 }
-
-### DELETE PRODUCT BY ID
-DELETE http://localhost:8002/api/product/delete-product/1
-Accept: application/json
-

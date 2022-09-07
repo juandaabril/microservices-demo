@@ -6,5 +6,4 @@ import reactor.core.publisher.Mono;
 
 public interface SpringDataBasketRepository extends ReactiveMongoRepository<Basket, String> {
     Mono<Basket> findByUserId(String userId);
-
 }

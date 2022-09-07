@@ -3,7 +3,7 @@ package com.juandaabril.catalog.core.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="categories")
+@Table(name="category")
 public class Category {
 
     @Id

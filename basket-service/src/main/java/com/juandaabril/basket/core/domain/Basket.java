@@ -3,6 +3,7 @@ package com.juandaabril.basket.core.domain;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Document
@@ -21,6 +22,11 @@ public class Basket {
         this.id = id;
         this.userId = userId;
         this.products = products;
+    }
+
+    public static Basket createEmptyBasket(String userId) {
+        Basket basket = new Basket(null, userId, new ArrayList<>());
+        return basket;
     }
 
     public void addProduct(Product product) {

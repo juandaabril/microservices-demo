@@ -15,11 +15,6 @@ public class ReactiveBasketRepository implements BasketRepository {
 
 
     @Override
-    public Mono<Basket> findById(String id) {
-        return springDataBasketRepository.findById(id);
-    }
-
-    @Override
     public Mono<Basket> save(Basket basket) {
         return springDataBasketRepository.save(basket);
     }
@@ -27,5 +22,10 @@ public class ReactiveBasketRepository implements BasketRepository {
     @Override
     public Flux<Basket> findAll() {
         return springDataBasketRepository.findAll();
+    }
+
+    @Override
+    public Mono<Basket> findByUserId(String userId) {
+        return springDataBasketRepository.findByUserId(userId);
     }
 }

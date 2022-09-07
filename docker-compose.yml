@@ -12,12 +12,12 @@ services:
     volumes:
       - ./.data/usersdb:/var/lib/postgresql/data  
   catalogdb:
-    image: mysql:5.7
+    image: mariadb:10.9.2
     volumes:
       - .data/catalogdb:/var/lib/mysql
     restart: always
     ports:
-      - "3306:3306"
+      - 3306:3306
     environment:
         MYSQL_ROOT_PASSWORD: catalogdb
         MYSQL_DATABASE: catalogdb

@@ -22,6 +22,18 @@ public class Product {
         this.pictureUrl = pictureUrl;
     }
 
+    public static Product createFrom(String productId, String name, BigDecimal unitPrice, BigDecimal oldUnitPrice, BigDecimal quantity, String pictureUrl) {
+        Product product = new Product(
+                productId,
+                name,
+                unitPrice,
+                oldUnitPrice,
+                quantity,
+                pictureUrl
+        );
+        return product;
+    }
+
     public String getId() {
         return id;
     }
