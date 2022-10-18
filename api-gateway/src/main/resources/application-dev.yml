@@ -1,0 +1,5 @@
+server:
+  port: ${PORT:8000}
+logging:
+  level:
+    '[org.springframework.cloud.gateway]': TRACE

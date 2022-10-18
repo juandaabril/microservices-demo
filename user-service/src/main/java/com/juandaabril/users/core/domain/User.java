@@ -3,16 +3,16 @@ package com.juandaabril.users.core.domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name="users")
+@Table(name = "users")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
     private String email;
 
-    @Column(unique = true)
     private String password;
 
     public static User create(String email, String password) {

@@ -1,0 +1,40 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: userdb
+spec:
+  ports:
+  - port: 3306
+    protocol: TCP
+    targetPort: 3306
+  selector:
+    app: userdb
+  type: ClusterIP
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: userdb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: userdb
+  template:
+    metadata:
+      labels:
+        app: userdb
+    spec:
+      containers:
+      - image: postgres:11
+        name: postgres
+        ports:
+        - containerPort: 5432
+        env:
+          - name: POSTGRES_DB
+            value: userdb
+          - name: POSTGRES_USER
+            value: userdb
+          - name: POSTGRES_PASSWORD
+            value: userdb

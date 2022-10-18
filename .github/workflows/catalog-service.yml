@@ -1,4 +1,4 @@
-name: Catalog Service Workflow
+name: Catalog Service
 
 on:
   push:
@@ -52,4 +52,4 @@ jobs:
         with:
           context: ./catalog-service
           push: true
-          tags: ghcr.io/${{ github.repository }}-${{ steps.split.outputs._0 }}:${{ steps.split.outputs._1 }}
+          tags: ghcr.io/${{ github.repository }}/${{ steps.split.outputs._0 }}:${{ steps.split.outputs._1 }}
