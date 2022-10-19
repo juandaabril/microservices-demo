@@ -13,7 +13,7 @@ A simple example of microservices based in the [eShopOnContainers](https://githu
 |-----|-----|-----|
 |api-gateway|x|Java/SpringBoot|
 |basket-service|x|Typescript/Node/mongodb|
-|catalog-service|[![Catalog Service Workflow](https://github.com/juandaabril/microservices-demo/actions/workflows/catalog-service-workflow.yaml/badge.svg)](https://github.com/juandaabril/microservices-demo/actions/workflows/catalog-service-workflow.yaml)|Java/SpringBoot/MariaDB|
+|catalog-service|[![Catalog Service](https://github.com/juandaabril/microservices-demo/actions/workflows/catalog-service.yml/badge.svg)](https://github.com/juandaabril/microservices-demo/actions/workflows/catalog-service.yml)|Java/SpringBoot/MariaDB|
 |user-service|x|Java/SpringBoot/Webflux/Postgresql|
 |ordering-service|x|Go/Postgresql|
 
