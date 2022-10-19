@@ -1,4 +1,4 @@
-name: Catalog Service
+name: catalog-service
 
 on:
   push:
