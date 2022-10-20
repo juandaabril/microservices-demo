@@ -4,7 +4,7 @@ metadata:
   name: catalog-config
 data:
   database_host: catalogdb
-  database_port: catalogdb
-  database_name: catalogdb
-  database_username: catalogdb
-  database_password: catalogdb
+  database_port: "5432"
+  database_name: catalog
+  database_username: catalog_usr
+  database_password: catalog_pass

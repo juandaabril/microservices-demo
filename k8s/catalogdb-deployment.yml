@@ -32,13 +32,12 @@ metadata:
   name: catalogdb
 spec:
   ports:
-  - port: 3306
+  - port: 5432
     protocol: TCP
-    targetPort: 3306
+    targetPort: 5432
   selector:
     app: catalogdb
   type: ClusterIP
-
 ---
 apiVersion: apps/v1
 kind: Deployment
