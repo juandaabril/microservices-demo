@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: catalog-config
+data:
+  database_host: catalogdb
+  database_port: catalogdb
+  database_name: catalogdb
+  database_username: catalogdb
+  database_password: catalogdb

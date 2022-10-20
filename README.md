@@ -8,7 +8,7 @@ A simple example of microservices based in the [eShopOnContainers](https://githu
 
 
 ## Services
-| Service | Status |Technology |
+|Service|Status|Stack|
 |-----|-----|-----|
 |[api-gateway](src/api-gateway/README.md)|[![api-gateway](https://github.com/juandaabril/microservices-demo/actions/workflows/api-gateway.yml/badge.svg)](https://github.com/juandaabril/microservices-demo/actions/workflows/api-gateway.yml)|Java/SpringBoot|
 |[basket-service](src/basket-service/README.md)|x|Typescript/Node/mongodb|

@@ -38,3 +38,11 @@ spec:
             value: userdb
           - name: POSTGRES_PASSWORD
             value: userdb
+        volumeMounts:
+          - name: data-userdb
+            mountPath: /var/lib/postgresql/data  
+      volumes:
+        - name: data-userdb
+          hostPath: 
+            path: /var/lib/data-userdb
+            type: DirectoryOrCreate
