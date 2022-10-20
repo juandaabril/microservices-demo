@@ -15,7 +15,6 @@ services:
     image: mariadb:10.9.2
     volumes:
       - .data/catalogdb:/var/lib/mysql
-    restart: always
     ports:
       - 3306:3306
     environment:
@@ -27,7 +26,6 @@ services:
     image: mongo:6.0
     volumes:
       - .data/basketdb:/data/db
-    restart: always
     ports:
       - 27017:27017
     environment:

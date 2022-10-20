@@ -1,0 +1,93 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author:  juandaabril
+      changes:
+        - createTable:
+            tableName: category
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+  - changeSet:
+      id: 2
+      author: juandaabril
+      changes:
+        - createTable:
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: category_id
+                  type: uuid
+                  constraints:
+                    nullable: false
+                    foreignKeyName: fk_product_category
+                    references: category(id)
+              - column:
+                  name: description
+                  type: varchar(255)
+              - column:
+                  name: picture_file_name
+                  type: varchar(255)
+              - column:
+                  name: picture_url
+                  type: varchar(255)
+              - column:
+                  name: price
+                  type: decimal(19, 2)
+        - createIndex:
+            columns:
+              - column:
+                  name: category_id
+            indexName: idx_product_category
+            tableName: product
+  - changeSet:
+      id: 3
+      author: juandaabril
+      changes:
+        - loadData:
+            file: classpath*:db/changelog/migrations/catalog.csv
+            separator: ;
+            tableName: category
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: name
+                  type: varchar
+        - loadData:
+            file: classpath*:db/changelog/migrations/product.csv
+            separator: ;
+            tableName: product
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+              - column:
+                  name: category_id
+                  type: uuid
+              - column:
+                  name: description
+                  type: string
+              - column:
+                  name: picture_file_name
+                  type: string
+              - column:
+                  name: picture_url
+                  type: string
+              - column:
+                  name: price
+                  type: numeric

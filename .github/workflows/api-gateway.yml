@@ -16,9 +16,9 @@ jobs:
           java-version: 17
           distribution: 'adopt'
       - name: Build
-        run: cd ./api-gateway && ./gradlew build
+        run: cd ./src/api-gateway && ./gradlew build
       - name: Test
-        run: cd ./api-gateway && ./gradlew test
+        run: cd ./src/api-gateway && ./gradlew test
   publish:
     needs: build
     runs-on: ubuntu-latest
@@ -50,6 +50,6 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v3
         with:
-          context: ./api-gateway
+          context: ./src/api-gateway
           push: true
           tags: ghcr.io/${{ github.repository }}/${{ steps.split.outputs._0 }}:${{ steps.split.outputs._1 }}
