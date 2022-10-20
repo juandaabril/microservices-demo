@@ -26,13 +26,13 @@ spec:
         app: catalog-service
     spec:
       containers:
-      - image: ghcr.io/juandaabril/microservices-demo/catalog-service:0.0.16
+      - image: ghcr.io/juandaabril/microservices-demo/catalog-service:0.0.17
         name: catalog-service
         ports:
         - containerPort: 8001
         env:
           - name: PORT
-            value: 8001
+            value: "8001"
           - name: DATABASE_HOST
             valueFrom:
               configMapKeyRef:

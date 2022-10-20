@@ -26,10 +26,10 @@ spec:
         app: api-gateway
     spec:
       containers:
-      - image: ghcr.io/juandaabril/microservices-demo/api-gateway:0.0.1
+      - image: ghcr.io/juandaabril/microservices-demo/api-gateway:0.0.3
         name: api-gateway
         ports:
         - containerPort: 8000
         env:
           - name: PORT
-            value: 8000
+            value: "8000"
