@@ -1,10 +1,17 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: catalog-config
+  name: configurations
 data:
-  database_host: catalogdb
-  database_port: "5432"
-  database_name: catalog
-  database_username: catalog_usr
-  database_password: catalog_pass
+  CATALOG_DATABASE_HOST: catalogdb
+  CATALOG_DATABASE_PORT: "5433"
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: secrets
+type: Opaque
+data:
+  CATALOG_DATABASE_NAME: Y2F0YWxvZ2Ri
+  CATALOG_DATABASE_USERNAME: Y2F0YWxvZ191c3I=
+  CATALOG_DATABASE_PASSWORD: Y2F0YWxvZ19wYXNz

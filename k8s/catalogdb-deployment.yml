@@ -32,12 +32,12 @@ metadata:
   name: catalogdb
 spec:
   ports:
-  - port: 5432
+  - port: 5433
     protocol: TCP
     targetPort: 5432
   selector:
     app: catalogdb
-  type: ClusterIP
+  type: LoadBalancer
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -61,19 +61,19 @@ spec:
         env:
           - name: POSTGRES_DB
             valueFrom:
-              configMapKeyRef:
-                name: catalog-config
-                key: database_name
+              secretKeyRef:
+                name: secrets
+                key: CATALOG_DATABASE_NAME
           - name: POSTGRES_USER
             valueFrom:
-              configMapKeyRef:
-                name: catalog-config
-                key: database_username
+              secretKeyRef:
+                name: secrets
+                key: CATALOG_DATABASE_USERNAME
           - name: POSTGRES_PASSWORD
             valueFrom:
-              configMapKeyRef:
-                name: catalog-config
-                key: database_password
+              secretKeyRef:
+                name: secrets
+                key: CATALOG_DATABASE_PASSWORD
         volumeMounts:
           - name: data-catalogdb
             mountPath: /var/lib/postgresql/data  
